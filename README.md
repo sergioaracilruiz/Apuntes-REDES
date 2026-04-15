@@ -24,7 +24,7 @@ Texto claro, sin párrafos excesivamente largos.
 - Punto clave 1
 - Punto clave 2
 
-
+## Convenciones de estilo
 !!! note "Apunte"
     Escribir el apunte
 
