@@ -71,7 +71,7 @@ Cuanto mayor sea:
 - La velocidad del bus
 - El número de bits transmitidos en paralelo  
 
-!!! tip "Examen"
+!!! tip "Información"
     mayor será el rendimiento potencial de la tarjeta.
 
 ---
@@ -207,3 +207,31 @@ Estas características son comunes en **servidores**.
 
 ---
 
+## 11. Buenas prácticas profesionales
+
+- Instalar tarjetas compatibles con la red
+- Usar drivers oficiales
+- Documentar el hardware instalado
+- Probar la conexión tras la instalación
+- Evitar configuraciones innecesarias
+
+---
+
+## 12. Resumen para estudiar
+
+### Esquema mental
+
+- Tarjeta de red
+  - Cableada / Inalámbrica
+  - Interfaz (PCIe, USB)
+  - Driver
+  - Configuración
+  - Dirección MAC
+
+### Puntos habituales de examen
+
+- Función de una tarjeta de red
+- Diferencia entre hardware y driver
+- Qué es Plug & Play
+- Comandos `ifconfig` / `iwconfig`
+- Dirección MAC
