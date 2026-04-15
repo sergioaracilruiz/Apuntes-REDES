@@ -14,7 +14,7 @@ Este sitio recoge de forma clara y estructurada los conceptos fundamentales sobr
 
 ---
 
-## 🎯 Objetivos del material
+## Objetivos del material
 
 - Servir como **apuntes de estudio** para estudiantes de redes
 - FuncionAR como **documentación técnica básica**
@@ -23,7 +23,7 @@ Este sitio recoge de forma clara y estructurada los conceptos fundamentales sobr
 
 ---
 
-## 📚 Contenido del sitio
+## Contenido del sitio
 
 El temario se organiza en los siguientes capítulos:
 
@@ -44,7 +44,7 @@ Cada capítulo incluye:
 
 ---
 
-## 👨‍🎓 ¿A quién va dirigido?
+## ¿A quién va dirigido?
 
 - Estudiantes de **FP de Informática y Telecomunicaciones**
 - Estudiantes universitarios de **redes y sistemas**
@@ -54,7 +54,7 @@ Cada capítulo incluye:
 
 ---
 
-## 🛠️ Metodología
+## Metodología
 
 - Lenguaje técnico, pero accesible
 - Enfoque práctico
@@ -63,7 +63,7 @@ Cada capítulo incluye:
 
 ---
 
-## 🌐 Sobre esta web
+## Sobre esta web
 
 Esta web está construida con **Markdown + MkDocs** y se publica como **sitio web estático**, lo que permite:
 
@@ -74,5 +74,5 @@ Esta web está construida con **Markdown + MkDocs** y se publica como **sitio we
 
 ---
 
-📌 **Consejo**:  
+**Consejo**:  
 Empieza por el Capítulo 01 y utiliza la sección **Recursos y esquemas** para repasar antes de los exámenes.
