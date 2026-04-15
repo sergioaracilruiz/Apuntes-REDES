@@ -1,0 +1,1421 @@
+
+<!doctype html>
+<html lang="es" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Apuntes y documentación sobre instalación de redes LAN">
+      
+      
+        <meta name="author" content="Sergio Aracil Ruiz">
+      
+      
+      
+        <link rel="prev" href="../03_tarjeta_red/">
+      
+      
+        <link rel="next" href="../05_cableado/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>Capítulo 04 · Ethernet - Instalación física de redes</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#04-ethernet" class="md-skip">
+          Saltar a contenido
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Cabecera">
+    <a href=".." title="Instalación física de redes" class="md-header__button md-logo" aria-label="Instalación física de redes" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Instalación física de redes
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Capítulo 04 · Ethernet
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Búsqueda" placeholder="Búsqueda" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Buscar">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Limpiar" aria-label="Limpiar" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inicializando búsqueda
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navegación" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Instalación física de redes" class="md-nav__button md-logo" aria-label="Instalación física de redes" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Instalación física de redes
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Inicio
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../01_medios/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Capítulo 01 · Medios de transmisión
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../02_conectores/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Capítulo 02 · Conectores y herramientas
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03_tarjeta_red/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Capítulo 03 · Tarjeta de red
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Capítulo 04 · Ethernet
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Capítulo 04 · Ethernet
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-ideas-clave-del-capitulo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Ideas clave del capítulo
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-que-es-ethernet" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Qué es Ethernet
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-el-acceso-al-medio-csmacd" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. El acceso al medio: CSMA/CD
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. El acceso al medio: CSMA/CD">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#funcionamiento-basico" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Funcionamiento básico
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-colisiones-y-dominios-de-colision" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Colisiones y dominios de colisión
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Colisiones y dominios de colisión">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41-colision" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.1 Colisión
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42-dominio-de-colision" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.2 Dominio de colisión
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-trama-ethernet" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Trama Ethernet
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. Trama Ethernet">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#funcion-de-la-tarjeta-de-red" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Función de la tarjeta de red
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-tipos-de-ethernet-segun-velocidad-y-medio" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Tipos de Ethernet según velocidad y medio
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6. Tipos de Ethernet según velocidad y medio">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#61-ethernet-a-10-mbps" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.1 Ethernet a 10 Mbps
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#62-fast-ethernet-100-mbps" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.2 Fast Ethernet (100 Mbps)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#63-gigabit-ethernet-1-gbps" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.3 Gigabit Ethernet (1 Gbps)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#64-ethernet-a-10-gbps" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.4 Ethernet a 10 Gbps
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-resumen-comparativo-de-tipos-ethernet" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Resumen comparativo de tipos Ethernet
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-ethernet-y-dispositivos-de-red" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. Ethernet y dispositivos de red
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="8. Ethernet y dispositivos de red">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#interaccion-con-dispositivos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Interacción con dispositivos
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-power-over-ethernet-poe" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9. Power over Ethernet (PoE)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="9. Power over Ethernet (PoE)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ventajas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ventajas
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tipos-de-dispositivos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tipos de dispositivos
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-buenas-practicas-en-redes-ethernet" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10. Buenas prácticas en redes Ethernet
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#11-resumen-para-estudiar" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11. Resumen para estudiar
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="11. Resumen para estudiar">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#esquema-mental" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Esquema mental
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#puntos-habituales-de-examen" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Puntos habituales de examen
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../05_cableado/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Capítulo 05 · Cableado estructurado
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../06_residuos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Capítulo 06 · Gestión de residuos
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../recursos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Recursos y esquemas
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-ideas-clave-del-capitulo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Ideas clave del capítulo
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-que-es-ethernet" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Qué es Ethernet
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-el-acceso-al-medio-csmacd" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. El acceso al medio: CSMA/CD
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. El acceso al medio: CSMA/CD">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#funcionamiento-basico" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Funcionamiento básico
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-colisiones-y-dominios-de-colision" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Colisiones y dominios de colisión
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Colisiones y dominios de colisión">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41-colision" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.1 Colisión
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42-dominio-de-colision" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.2 Dominio de colisión
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-trama-ethernet" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Trama Ethernet
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. Trama Ethernet">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#funcion-de-la-tarjeta-de-red" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Función de la tarjeta de red
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-tipos-de-ethernet-segun-velocidad-y-medio" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Tipos de Ethernet según velocidad y medio
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6. Tipos de Ethernet según velocidad y medio">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#61-ethernet-a-10-mbps" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.1 Ethernet a 10 Mbps
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#62-fast-ethernet-100-mbps" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.2 Fast Ethernet (100 Mbps)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#63-gigabit-ethernet-1-gbps" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.3 Gigabit Ethernet (1 Gbps)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#64-ethernet-a-10-gbps" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.4 Ethernet a 10 Gbps
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-resumen-comparativo-de-tipos-ethernet" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Resumen comparativo de tipos Ethernet
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-ethernet-y-dispositivos-de-red" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. Ethernet y dispositivos de red
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="8. Ethernet y dispositivos de red">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#interaccion-con-dispositivos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Interacción con dispositivos
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-power-over-ethernet-poe" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9. Power over Ethernet (PoE)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="9. Power over Ethernet (PoE)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ventajas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ventajas
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tipos-de-dispositivos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tipos de dispositivos
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-buenas-practicas-en-redes-ethernet" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10. Buenas prácticas en redes Ethernet
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#11-resumen-para-estudiar" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11. Resumen para estudiar
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="11. Resumen para estudiar">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#esquema-mental" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Esquema mental
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#puntos-habituales-de-examen" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Puntos habituales de examen
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="04-ethernet">04 · Ethernet<a class="headerlink" href="#04-ethernet" title="Permanent link">&para;</a></h1>
+<h2 id="1-ideas-clave-del-capitulo">1. Ideas clave del capítulo<a class="headerlink" href="#1-ideas-clave-del-capitulo" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Ethernet</strong> es la tecnología de red de área local más utilizada.</li>
+<li>Está normalizada por el estándar <strong>IEEE 802.3</strong>.</li>
+<li>Define cómo se transmiten los datos y cómo se accede al medio.</li>
+<li>Utiliza direcciones <strong>MAC</strong> para identificar los dispositivos.</li>
+<li>La velocidad y el medio físico determinan el tipo de Ethernet.</li>
+</ul>
+<hr />
+<h2 id="2-que-es-ethernet">2. Qué es Ethernet<a class="headerlink" href="#2-que-es-ethernet" title="Permanent link">&para;</a></h2>
+<p><strong>Ethernet</strong> es una tecnología de red que define:</p>
+<ul>
+<li>El formato de las tramas</li>
+<li>El método de acceso al medio</li>
+<li>Las velocidades de transmisión</li>
+<li>Los medios físicos soportados</li>
+</ul>
+<p>Se diseñó originalmente para redes cableadas, aunque hoy convive con redes inalámbricas.</p>
+<div class="admonition note">
+<p class="admonition-title">Idea importante</p>
+<p>Ethernet funciona principalmente en las <strong>capas 1 y 2 del modelo OSI</strong> (física y enlace).</p>
+</div>
+<hr />
+<h2 id="3-el-acceso-al-medio-csmacd">3. El acceso al medio: CSMA/CD<a class="headerlink" href="#3-el-acceso-al-medio-csmacd" title="Permanent link">&para;</a></h2>
+<p>Ethernet utiliza el método <strong>CSMA/CD</strong><br />
+(<em>Carrier Sense Multiple Access with Collision Detection</em>).</p>
+<h3 id="funcionamiento-basico">Funcionamiento básico<a class="headerlink" href="#funcionamiento-basico" title="Permanent link">&para;</a></h3>
+<ol>
+<li>La estación <strong>escucha el canal</strong></li>
+<li>Si está libre, <strong>transmite</strong></li>
+<li>Si detecta una <strong>colisión</strong>:</li>
+<li>Detiene la transmisión</li>
+<li>Envía una señal de aviso (<em>jam</em>)</li>
+<li>Espera un tiempo aleatorio</li>
+<li>Reintenta el envío</li>
+</ol>
+<div class="admonition warning">
+<p class="admonition-title">Examen</p>
+<p>CSMA/CD solo se usa en <strong>Ethernet compartida</strong> (hubs).<br />
+En redes con <strong>switch</strong>, las colisiones desaparecen.</p>
+</div>
+<hr />
+<h2 id="4-colisiones-y-dominios-de-colision">4. Colisiones y dominios de colisión<a class="headerlink" href="#4-colisiones-y-dominios-de-colision" title="Permanent link">&para;</a></h2>
+<h3 id="41-colision">4.1 Colisión<a class="headerlink" href="#41-colision" title="Permanent link">&para;</a></h3>
+<p>Una <strong>colisión</strong> se produce cuando:</p>
+<ul>
+<li>Dos estaciones transmiten al mismo tiempo</li>
+<li>Sus señales se superponen en el medio</li>
+</ul>
+<p>Esto provoca:</p>
+<ul>
+<li>Pérdida de datos</li>
+<li>Retransmisiones</li>
+<li>Reducción del rendimiento</li>
+</ul>
+<hr />
+<h3 id="42-dominio-de-colision">4.2 Dominio de colisión<a class="headerlink" href="#42-dominio-de-colision" title="Permanent link">&para;</a></h3>
+<p>Un <strong>dominio de colisión</strong> es la parte de la red donde:</p>
+<ul>
+<li>Pueden producirse colisiones entre equipos</li>
+</ul>
+<p>Dispositivos y dominios:</p>
+<ul>
+<li><strong>Hub</strong> → un único dominio de colisión</li>
+<li><strong>Switch</strong> → un dominio por puerto</li>
+<li><strong>Router</strong> → separa dominios de colisión</li>
+</ul>
+<div class="admonition tip">
+<p class="admonition-title">Apunte</p>
+<p>Los <strong>switches eliminan las colisiones</strong> en Ethernet moderna.</p>
+</div>
+<hr />
+<h2 id="5-trama-ethernet">5. Trama Ethernet<a class="headerlink" href="#5-trama-ethernet" title="Permanent link">&para;</a></h2>
+<p>La información en Ethernet se transmite en forma de <strong>tramas</strong>.</p>
+<p>Una trama Ethernet incluye:</p>
+<ul>
+<li>Dirección MAC destino</li>
+<li>Dirección MAC origen</li>
+<li>Datos</li>
+<li>Control de errores</li>
+</ul>
+<h3 id="funcion-de-la-tarjeta-de-red">Función de la tarjeta de red<a class="headerlink" href="#funcion-de-la-tarjeta-de-red" title="Permanent link">&para;</a></h3>
+<p>La tarjeta de red:</p>
+<ul>
+<li>Construye la trama antes de enviarla</li>
+<li>Comprueba errores al recibirla</li>
+<li>Descarta tramas no dirigidas a su MAC</li>
+</ul>
+<hr />
+<h2 id="6-tipos-de-ethernet-segun-velocidad-y-medio">6. Tipos de Ethernet según velocidad y medio<a class="headerlink" href="#6-tipos-de-ethernet-segun-velocidad-y-medio" title="Permanent link">&para;</a></h2>
+<h3 id="61-ethernet-a-10-mbps">6.1 Ethernet a 10 Mbps<a class="headerlink" href="#61-ethernet-a-10-mbps" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>10Base5</strong></li>
+<li>Coaxial grueso</li>
+<li>Hasta 500 m</li>
+<li><strong>10Base2</strong></li>
+<li>Coaxial fino</li>
+<li>Hasta 185 m</li>
+<li><strong>10BaseT</strong></li>
+<li>UTP</li>
+<li>Hasta 100 m</li>
+</ul>
+<hr />
+<h3 id="62-fast-ethernet-100-mbps">6.2 Fast Ethernet (100 Mbps)<a class="headerlink" href="#62-fast-ethernet-100-mbps" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>100BaseTX</strong></li>
+<li>UTP/STP categoría 5</li>
+<li>Hasta 100 m</li>
+<li><strong>100BaseFX</strong></li>
+<li>Fibra óptica</li>
+<li>Hasta 2 km en dúplex</li>
+</ul>
+<hr />
+<h3 id="63-gigabit-ethernet-1-gbps">6.3 Gigabit Ethernet (1 Gbps)<a class="headerlink" href="#63-gigabit-ethernet-1-gbps" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>1000BaseTX</strong></li>
+<li>UTP categoría 5e / 6</li>
+<li>Hasta 100 m</li>
+<li><strong>1000BaseSX</strong></li>
+<li>Fibra multimodo</li>
+<li>Hasta 550 m</li>
+<li><strong>1000BaseLX</strong></li>
+<li>Fibra monomodo</li>
+<li>Hasta 10 km</li>
+</ul>
+<hr />
+<h3 id="64-ethernet-a-10-gbps">6.4 Ethernet a 10 Gbps<a class="headerlink" href="#64-ethernet-a-10-gbps" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>10GBaseT</strong></li>
+<li>UTP categoría 6 o superior</li>
+<li>Hasta 100 m</li>
+<li><strong>10GBaseSR / LR / ER</strong></li>
+<li>Fibra óptica</li>
+<li>Desde cientos de metros hasta decenas de km</li>
+</ul>
+<hr />
+<h2 id="7-resumen-comparativo-de-tipos-ethernet">7. Resumen comparativo de tipos Ethernet<a class="headerlink" href="#7-resumen-comparativo-de-tipos-ethernet" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Tipo</th>
+<th>Medio</th>
+<th>Velocidad</th>
+<th>Distancia típica</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>10BaseT</td>
+<td>UTP</td>
+<td>10 Mbps</td>
+<td>100 m</td>
+</tr>
+<tr>
+<td>100BaseTX</td>
+<td>UTP Cat 5</td>
+<td>100 Mbps</td>
+<td>100 m</td>
+</tr>
+<tr>
+<td>1000BaseTX</td>
+<td>UTP Cat 5e</td>
+<td>1 Gbps</td>
+<td>100 m</td>
+</tr>
+<tr>
+<td>1000BaseLX</td>
+<td>Fibra</td>
+<td>1 Gbps</td>
+<td>Hasta 10 km</td>
+</tr>
+<tr>
+<td>10GBaseT</td>
+<td>UTP Cat 6</td>
+<td>10 Gbps</td>
+<td>100 m</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="8-ethernet-y-dispositivos-de-red">8. Ethernet y dispositivos de red<a class="headerlink" href="#8-ethernet-y-dispositivos-de-red" title="Permanent link">&para;</a></h2>
+<h3 id="interaccion-con-dispositivos">Interacción con dispositivos<a class="headerlink" href="#interaccion-con-dispositivos" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Hubs</strong></li>
+<li>Reenvían todo</li>
+<li>Generan colisiones</li>
+<li><strong>Switches</strong></li>
+<li>Conmutan tramas según MAC</li>
+<li>No hay colisiones</li>
+<li><strong>Routers</strong></li>
+<li>Conectan redes distintas</li>
+<li>No reenvían tramas indiscriminadamente</li>
+</ul>
+<hr />
+<h2 id="9-power-over-ethernet-poe">9. Power over Ethernet (PoE)<a class="headerlink" href="#9-power-over-ethernet-poe" title="Permanent link">&para;</a></h2>
+<p><strong>PoE (Power over Ethernet)</strong> permite suministrar energía eléctrica a través del cable Ethernet.</p>
+<h3 id="ventajas">Ventajas<a class="headerlink" href="#ventajas" title="Permanent link">&para;</a></h3>
+<ul>
+<li>No necesita fuente de alimentación extra</li>
+<li>Facilita la instalación</li>
+<li>Muy usado en:</li>
+<li>Cámaras IP</li>
+<li>Puntos de acceso Wi‑Fi</li>
+<li>Teléfonos IP</li>
+</ul>
+<h3 id="tipos-de-dispositivos">Tipos de dispositivos<a class="headerlink" href="#tipos-de-dispositivos" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>PSE</strong> (<em>Power Sourcing Equipment</em>)</li>
+<li>Suministra energía (switch PoE)</li>
+<li><strong>PD</strong> (<em>Powered Device</em>)</li>
+<li>Recibe energía (cámara, AP)</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Importante</p>
+<p>PoE requiere como mínimo <strong>cable categoría 5</strong>.</p>
+</div>
+<hr />
+<h2 id="10-buenas-practicas-en-redes-ethernet">10. Buenas prácticas en redes Ethernet<a class="headerlink" href="#10-buenas-practicas-en-redes-ethernet" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Usar cableado certificado</li>
+<li>Aprovechar switches en lugar de hubs</li>
+<li>Documentar dominios de red</li>
+<li>Elegir el tipo de Ethernet según necesidad</li>
+<li>Evitar segmentos excesivamente largos</li>
+</ul>
+<hr />
+<h2 id="11-resumen-para-estudiar">11. Resumen para estudiar<a class="headerlink" href="#11-resumen-para-estudiar" title="Permanent link">&para;</a></h2>
+<h3 id="esquema-mental">Esquema mental<a class="headerlink" href="#esquema-mental" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Ethernet</li>
+<li>IEEE 802.3</li>
+<li>CSMA/CD</li>
+<li>Tramas</li>
+<li>Tipos (10 / 100 / 1000 / 10G)</li>
+<li>PoE</li>
+</ul>
+<h3 id="puntos-habituales-de-examen">Puntos habituales de examen<a class="headerlink" href="#puntos-habituales-de-examen" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Qué es CSMA/CD</li>
+<li>Qué es un dominio de colisión</li>
+<li>Diferencias hub / switch</li>
+<li>Tipos de Ethernet más comunes</li>
+<li>Qué es PoE</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Volver al principio
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.sections", "navigation.top", "navigation.expand", "content.code.copy", "search.highlight"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version": "Seleccionar versi\u00f3n"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>

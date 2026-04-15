@@ -1,0 +1,1514 @@
+
+<!doctype html>
+<html lang="es" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Apuntes y documentación sobre instalación de redes LAN">
+      
+      
+        <meta name="author" content="Sergio Aracil Ruiz">
+      
+      
+      
+        <link rel="prev" href="..">
+      
+      
+        <link rel="next" href="../02_conectores/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>Capítulo 01 · Medios de transmisión - Instalación física de redes</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#01-medios-de-transmision" class="md-skip">
+          Saltar a contenido
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Cabecera">
+    <a href=".." title="Instalación física de redes" class="md-header__button md-logo" aria-label="Instalación física de redes" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Instalación física de redes
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Capítulo 01 · Medios de transmisión
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Búsqueda" placeholder="Búsqueda" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Buscar">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Limpiar" aria-label="Limpiar" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inicializando búsqueda
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navegación" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Instalación física de redes" class="md-nav__button md-logo" aria-label="Instalación física de redes" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Instalación física de redes
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Inicio
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Capítulo 01 · Medios de transmisión
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Capítulo 01 · Medios de transmisión
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-ideas-clave-del-capitulo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Ideas clave del capítulo
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-el-nivel-fisico-del-modelo-osi" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. El nivel físico del modelo OSI
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-que-es-un-medio-de-transmision" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Qué es un medio de transmisión
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-cables-de-pares-metalicos-par-trenzado" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Cables de pares metálicos (par trenzado)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Cables de pares metálicos (par trenzado)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41-caracteristicas-generales" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.1 Características generales
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42-tipos-de-cables-de-par-trenzado" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.2 Tipos de cables de par trenzado
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4.2 Tipos de cables de par trenzado">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cable-utp-unshielded-twisted-pair" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cable UTP (Unshielded Twisted Pair)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cable-stp-shielded-twisted-pair" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cable STP (Shielded Twisted Pair)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#43-comparativa-utp-vs-stp" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.3 Comparativa UTP vs STP
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-categorias-y-clases-del-cableado" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Categorías y clases del cableado
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. Categorías y clases del cableado">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#51-categorias-prestaciones-electricas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.1 Categorías (prestaciones eléctricas)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#52-clases-aplicaciones" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.2 Clases (aplicaciones)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-fibra-optica" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Fibra óptica
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6. Fibra óptica">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#61-caracteristicas-principales" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.1 Características principales
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#62-tipos-de-fibra-optica" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.2 Tipos de fibra óptica
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6.2 Tipos de fibra óptica">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#fibra-monomodo-smf" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Fibra monomodo (SMF)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fibra-multimodo-mmf" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Fibra multimodo (MMF)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#63-comparativa-fibra-vs-cobre" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.3 Comparativa fibra vs cobre
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-sistemas-inalambricos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Sistemas inalámbricos
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7. Sistemas inalámbricos">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#71-ventajas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.1 Ventajas
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#72-inconvenientes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.2 Inconvenientes
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#73-fenomenos-que-afectan-a-la-senal" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.3 Fenómenos que afectan a la señal
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-resumen-para-estudiar" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. Resumen para estudiar
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="8. Resumen para estudiar">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#esquema-mental" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Esquema mental
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#puntos-habituales-de-examen" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Puntos habituales de examen
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../02_conectores/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Capítulo 02 · Conectores y herramientas
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03_tarjeta_red/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Capítulo 03 · Tarjeta de red
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../04_ethernet/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Capítulo 04 · Ethernet
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../05_cableado/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Capítulo 05 · Cableado estructurado
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../06_residuos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Capítulo 06 · Gestión de residuos
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../recursos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Recursos y esquemas
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-ideas-clave-del-capitulo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Ideas clave del capítulo
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-el-nivel-fisico-del-modelo-osi" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. El nivel físico del modelo OSI
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-que-es-un-medio-de-transmision" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Qué es un medio de transmisión
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-cables-de-pares-metalicos-par-trenzado" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Cables de pares metálicos (par trenzado)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Cables de pares metálicos (par trenzado)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41-caracteristicas-generales" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.1 Características generales
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42-tipos-de-cables-de-par-trenzado" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.2 Tipos de cables de par trenzado
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4.2 Tipos de cables de par trenzado">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cable-utp-unshielded-twisted-pair" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cable UTP (Unshielded Twisted Pair)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cable-stp-shielded-twisted-pair" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cable STP (Shielded Twisted Pair)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#43-comparativa-utp-vs-stp" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.3 Comparativa UTP vs STP
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-categorias-y-clases-del-cableado" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Categorías y clases del cableado
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. Categorías y clases del cableado">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#51-categorias-prestaciones-electricas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.1 Categorías (prestaciones eléctricas)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#52-clases-aplicaciones" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.2 Clases (aplicaciones)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-fibra-optica" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Fibra óptica
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6. Fibra óptica">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#61-caracteristicas-principales" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.1 Características principales
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#62-tipos-de-fibra-optica" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.2 Tipos de fibra óptica
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6.2 Tipos de fibra óptica">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#fibra-monomodo-smf" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Fibra monomodo (SMF)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fibra-multimodo-mmf" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Fibra multimodo (MMF)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#63-comparativa-fibra-vs-cobre" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.3 Comparativa fibra vs cobre
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-sistemas-inalambricos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Sistemas inalámbricos
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7. Sistemas inalámbricos">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#71-ventajas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.1 Ventajas
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#72-inconvenientes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.2 Inconvenientes
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#73-fenomenos-que-afectan-a-la-senal" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.3 Fenómenos que afectan a la señal
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-resumen-para-estudiar" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. Resumen para estudiar
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="8. Resumen para estudiar">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#esquema-mental" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Esquema mental
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#puntos-habituales-de-examen" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Puntos habituales de examen
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="01-medios-de-transmision">01 · Medios de transmisión<a class="headerlink" href="#01-medios-de-transmision" title="Permanent link">&para;</a></h1>
+<h2 id="1-ideas-clave-del-capitulo">1. Ideas clave del capítulo<a class="headerlink" href="#1-ideas-clave-del-capitulo" title="Permanent link">&para;</a></h2>
+<ul>
+<li>El <strong>medio de transmisión</strong> es el soporte físico por el que viaja la información.</li>
+<li>Pertenece a la <strong>capa física (capa 1) del modelo OSI</strong>.</li>
+<li>La elección del medio influye directamente en:</li>
+<li>Velocidad</li>
+<li>Distancia</li>
+<li>Fiabilidad</li>
+<li>Coste</li>
+<li>En redes locales se utilizan principalmente:</li>
+<li>Cables de par trenzado</li>
+<li>Fibra óptica</li>
+<li>Sistemas inalámbricos</li>
+</ul>
+<hr />
+<h2 id="2-el-nivel-fisico-del-modelo-osi">2. El nivel físico del modelo OSI<a class="headerlink" href="#2-el-nivel-fisico-del-modelo-osi" title="Permanent link">&para;</a></h2>
+<p>La instalación física de una red se centra en la <strong>capa 1 del modelo OSI</strong>, responsable de:</p>
+<ul>
+<li>La transmisión de bits (0 y 1)</li>
+<li>Las características eléctricas, ópticas o radioeléctricas</li>
+<li>El tipo de cableado, conectores y señal</li>
+</ul>
+<p>Esta capa <strong>no interpreta datos</strong>, solo garantiza que la señal llegue correctamente entre dispositivos.</p>
+<hr />
+<h2 id="3-que-es-un-medio-de-transmision">3. Qué es un medio de transmisión<a class="headerlink" href="#3-que-es-un-medio-de-transmision" title="Permanent link">&para;</a></h2>
+<p>El <strong>medio de transmisión</strong> es el soporte físico que permite transportar la información entre dos dispositivos de red.</p>
+<p>Según la naturaleza de la señal, puede ser:</p>
+<ul>
+<li><strong>Eléctrico</strong> → cables de cobre</li>
+<li><strong>Óptico</strong> → fibra óptica</li>
+<li><strong>Electromagnético</strong> → radio (Wi‑Fi)</li>
+</ul>
+<p>La <strong>calidad de la transmisión</strong> depende de factores como:</p>
+<ul>
+<li>Atenuación</li>
+<li>Interferencias</li>
+<li>Distancia</li>
+<li>Velocidad de transmisión</li>
+</ul>
+<hr />
+<h2 id="4-cables-de-pares-metalicos-par-trenzado">4. Cables de pares metálicos (par trenzado)<a class="headerlink" href="#4-cables-de-pares-metalicos-par-trenzado" title="Permanent link">&para;</a></h2>
+<p>Son los cables más utilizados en redes de área local (LAN).</p>
+<h3 id="41-caracteristicas-generales">4.1 Características generales<a class="headerlink" href="#41-caracteristicas-generales" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Formados por <strong>pares de hilos de cobre</strong></li>
+<li>Cada par está <strong>trenzado</strong> para reducir interferencias</li>
+<li>Cumplen leyes eléctricas (Ley de Ohm y electromagnetismo)</li>
+<li>Económicos y fáciles de instalar</li>
+</ul>
+<p>Cuando se superan ciertas distancias, la señal se degrada y pueden ser necesarios <strong>repetidores</strong>.</p>
+<hr />
+<h3 id="42-tipos-de-cables-de-par-trenzado">4.2 Tipos de cables de par trenzado<a class="headerlink" href="#42-tipos-de-cables-de-par-trenzado" title="Permanent link">&para;</a></h3>
+<h4 id="cable-utp-unshielded-twisted-pair">Cable UTP (Unshielded Twisted Pair)<a class="headerlink" href="#cable-utp-unshielded-twisted-pair" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Sin apantallamiento</li>
+<li>Flexible y barato</li>
+<li>Muy utilizado en instalaciones estándar</li>
+<li>Sensible a interferencias</li>
+</ul>
+<h4 id="cable-stp-shielded-twisted-pair">Cable STP (Shielded Twisted Pair)<a class="headerlink" href="#cable-stp-shielded-twisted-pair" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Incorpora <strong>malla metálica de protección</strong></li>
+<li>Mucha mejor inmunidad al ruido</li>
+<li>Menos flexible</li>
+<li><strong>Debe conectarse a tierra</strong></li>
+</ul>
+<div class="admonition tip">
+<p class="admonition-title">Apunte</p>
+<p>En la práctica profesional, <strong>UTP es el más usado</strong>, salvo en entornos con mucho ruido eléctrico.</p>
+</div>
+<hr />
+<h3 id="43-comparativa-utp-vs-stp">4.3 Comparativa UTP vs STP<a class="headerlink" href="#43-comparativa-utp-vs-stp" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Característica</th>
+<th>UTP</th>
+<th>STP</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Precio</td>
+<td>Bajo</td>
+<td>Más alto</td>
+</tr>
+<tr>
+<td>Flexibilidad</td>
+<td>Alta</td>
+<td>Baja</td>
+</tr>
+<tr>
+<td>Protección frente al ruido</td>
+<td>Baja</td>
+<td>Alta</td>
+</tr>
+<tr>
+<td>Dificultad de instalación</td>
+<td>Baja</td>
+<td>Alta</td>
+</tr>
+<tr>
+<td>Conexión a tierra</td>
+<td>No</td>
+<td>Sí</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="5-categorias-y-clases-del-cableado">5. Categorías y clases del cableado<a class="headerlink" href="#5-categorias-y-clases-del-cableado" title="Permanent link">&para;</a></h2>
+<h3 id="51-categorias-prestaciones-electricas">5.1 Categorías (prestaciones eléctricas)<a class="headerlink" href="#51-categorias-prestaciones-electricas" title="Permanent link">&para;</a></h3>
+<p>Las <strong>categorías</strong> definen las prestaciones del cable en frecuencia y velocidad.</p>
+<table>
+<thead>
+<tr>
+<th>Categoría</th>
+<th>Frecuencia máx.</th>
+<th>Uso típico</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Cat 3</td>
+<td>10 MHz</td>
+<td>10 Mbps (obsoleta)</td>
+</tr>
+<tr>
+<td>Cat 5</td>
+<td>100 MHz</td>
+<td>100 Mbps</td>
+</tr>
+<tr>
+<td>Cat 5e</td>
+<td>100 MHz</td>
+<td>1 Gbps</td>
+</tr>
+<tr>
+<td>Cat 6</td>
+<td>250 MHz</td>
+<td>1–10 Gbps</td>
+</tr>
+<tr>
+<td>Cat 7</td>
+<td>600 MHz</td>
+<td>10 Gbps</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition tip">
+<p class="admonition-title">Apunte actualidad</p>
+<p>Actualmente las más utilizadas son <strong>Cat 5e y Cat 6</strong>.</p>
+</div>
+<hr />
+<h3 id="52-clases-aplicaciones">5.2 Clases (aplicaciones)<a class="headerlink" href="#52-clases-aplicaciones" title="Permanent link">&para;</a></h3>
+<p>Las <strong>clases</strong> definen la relación entre ancho de banda, distancia y aplicación.</p>
+<table>
+<thead>
+<tr>
+<th>Clase</th>
+<th>Ancho de banda</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A</td>
+<td>100 kHz</td>
+</tr>
+<tr>
+<td>B</td>
+<td>1 MHz</td>
+</tr>
+<tr>
+<td>C</td>
+<td>20 MHz</td>
+</tr>
+<tr>
+<td>D</td>
+<td>100 MHz</td>
+</tr>
+<tr>
+<td>E</td>
+<td>250 MHz</td>
+</tr>
+<tr>
+<td>F</td>
+<td>600 MHz</td>
+</tr>
+</tbody>
+</table>
+<p>Categoría y clase están relacionadas, pero <strong>no son lo mismo</strong>.</p>
+<hr />
+<h2 id="6-fibra-optica">6. Fibra óptica<a class="headerlink" href="#6-fibra-optica" title="Permanent link">&para;</a></h2>
+<p>La <strong>fibra óptica</strong> transmite información mediante <strong>pulsos de luz</strong>.</p>
+<h3 id="61-caracteristicas-principales">6.1 Características principales<a class="headerlink" href="#61-caracteristicas-principales" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Inmune a interferencias electromagnéticas</li>
+<li>Muy alta velocidad</li>
+<li>Grandes distancias</li>
+<li>Más cara y frágil que el cobre</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Idea importante</p>
+<p>Una sola fibra puede transmitir <strong>decenas de Gbps</strong> a kilómetros de distancia.</p>
+</div>
+<hr />
+<h3 id="62-tipos-de-fibra-optica">6.2 Tipos de fibra óptica<a class="headerlink" href="#62-tipos-de-fibra-optica" title="Permanent link">&para;</a></h3>
+<h4 id="fibra-monomodo-smf">Fibra monomodo (SMF)<a class="headerlink" href="#fibra-monomodo-smf" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Núcleo muy estrecho (menor de 10 μm)</li>
+<li>Un solo camino para la luz</li>
+<li>Alcances de decenas de kilómetros</li>
+<li>Usada en backbone y campus</li>
+</ul>
+<h4 id="fibra-multimodo-mmf">Fibra multimodo (MMF)<a class="headerlink" href="#fibra-multimodo-mmf" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Núcleo más ancho (50 o 62,5 μm)</li>
+<li>Múltiples reflexiones internas</li>
+<li>Distancias más cortas</li>
+<li>Más económica</li>
+</ul>
+<hr />
+<h3 id="63-comparativa-fibra-vs-cobre">6.3 Comparativa fibra vs cobre<a class="headerlink" href="#63-comparativa-fibra-vs-cobre" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Característica</th>
+<th>Par trenzado</th>
+<th>Fibra óptica</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Velocidad</td>
+<td>Media / Alta</td>
+<td>Muy alta</td>
+</tr>
+<tr>
+<td>Distancia</td>
+<td>Hasta 100 m</td>
+<td>Kilómetros</td>
+</tr>
+<tr>
+<td>Inmunidad al ruido</td>
+<td>Baja</td>
+<td>Total</td>
+</tr>
+<tr>
+<td>Coste</td>
+<td>Bajo</td>
+<td>Alto</td>
+</tr>
+<tr>
+<td>Fragilidad</td>
+<td>Baja</td>
+<td>Alta</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="7-sistemas-inalambricos">7. Sistemas inalámbricos<a class="headerlink" href="#7-sistemas-inalambricos" title="Permanent link">&para;</a></h2>
+<p>Los <strong>sistemas inalámbricos</strong> transmiten información mediante <strong>ondas electromagnéticas</strong>.</p>
+<h3 id="71-ventajas">7.1 Ventajas<a class="headerlink" href="#71-ventajas" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Movilidad</li>
+<li>Flexibilidad</li>
+<li>Instalación sencilla</li>
+<li>No requieren cableado físico</li>
+</ul>
+<h3 id="72-inconvenientes">7.2 Inconvenientes<a class="headerlink" href="#72-inconvenientes" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Menor velocidad que cableado</li>
+<li>Mayor latencia</li>
+<li>Sensibles a interferencias</li>
+<li>Seguridad más compleja</li>
+</ul>
+<hr />
+<h3 id="73-fenomenos-que-afectan-a-la-senal">7.3 Fenómenos que afectan a la señal<a class="headerlink" href="#73-fenomenos-que-afectan-a-la-senal" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Reflexión</strong>: rebote de la señal en superficies duras</li>
+<li><strong>Difracción</strong>: la señal rodea obstáculos</li>
+<li><strong>Dispersión</strong>: difusión en múltiples direcciones</li>
+</ul>
+<div class="admonition warning">
+<p class="admonition-title">Examen</p>
+<p>Estos fenómenos <strong>reducen la calidad del Wi‑Fi</strong> y provocan cortes o baja velocidad.</p>
+</div>
+<hr />
+<h2 id="8-resumen-para-estudiar">8. Resumen para estudiar<a class="headerlink" href="#8-resumen-para-estudiar" title="Permanent link">&para;</a></h2>
+<h3 id="esquema-mental">Esquema mental<a class="headerlink" href="#esquema-mental" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Medios de transmisión</li>
+<li>Par trenzado<ul>
+<li>UTP</li>
+<li>STP</li>
+<li>Categorías 5e / 6</li>
+</ul>
+</li>
+<li>Fibra óptica<ul>
+<li>Monomodo</li>
+<li>Multimodo</li>
+</ul>
+</li>
+<li>Sistemas inalámbricos<ul>
+<li>Wi‑Fi</li>
+<li>Interferencias</li>
+</ul>
+</li>
+</ul>
+<h3 id="puntos-habituales-de-examen">Puntos habituales de examen<a class="headerlink" href="#puntos-habituales-de-examen" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Diferencias entre UTP y STP</li>
+<li>Categorías más usadas en LAN</li>
+<li>Ventajas de la fibra óptica</li>
+<li>Fenómenos de la señal inalámbrica</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Volver al principio
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.sections", "navigation.top", "navigation.expand", "content.code.copy", "search.highlight"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version": "Seleccionar versi\u00f3n"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>

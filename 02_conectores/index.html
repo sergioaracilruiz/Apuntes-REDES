@@ -1,0 +1,1375 @@
+
+<!doctype html>
+<html lang="es" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Apuntes y documentación sobre instalación de redes LAN">
+      
+      
+        <meta name="author" content="Sergio Aracil Ruiz">
+      
+      
+      
+        <link rel="prev" href="../01_medios/">
+      
+      
+        <link rel="next" href="../03_tarjeta_red/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>Capítulo 02 · Conectores y herramientas - Instalación física de redes</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#02-conectores-y-herramientas" class="md-skip">
+          Saltar a contenido
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Cabecera">
+    <a href=".." title="Instalación física de redes" class="md-header__button md-logo" aria-label="Instalación física de redes" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Instalación física de redes
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Capítulo 02 · Conectores y herramientas
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Búsqueda" placeholder="Búsqueda" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Buscar">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Limpiar" aria-label="Limpiar" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inicializando búsqueda
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navegación" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Instalación física de redes" class="md-nav__button md-logo" aria-label="Instalación física de redes" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Instalación física de redes
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Inicio
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../01_medios/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Capítulo 01 · Medios de transmisión
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Capítulo 02 · Conectores y herramientas
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Capítulo 02 · Conectores y herramientas
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-ideas-clave-del-capitulo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Ideas clave del capítulo
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-que-es-un-conector-de-red" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Qué es un conector de red
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-conectores-para-cables-de-par-trenzado" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Conectores para cables de par trenzado
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Conectores para cables de par trenzado">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-conector-rj45" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.1 Conector RJ45
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-otros-conectores-de-pares" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.2 Otros conectores de pares
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-conectores-para-cable-coaxial" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Conectores para cable coaxial
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Conectores para cable coaxial">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#conectores-mas-comunes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Conectores más comunes
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-conectores-para-fibra-optica" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Conectores para fibra óptica
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. Conectores para fibra óptica">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#51-conectores-mas-usados" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.1 Conectores más usados
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5.1 Conectores más usados">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#conector-sc-straight-connection" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Conector SC (Straight Connection)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#conector-st-straight-tip" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Conector ST (Straight Tip)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#52-otros-conectores-de-fibra" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.2 Otros conectores de fibra
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-elementos-fisicos-complementarios" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Elementos físicos complementarios
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-herramientas-de-conectorizacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Herramientas de conectorización
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7. Herramientas de conectorización">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#71-herramientas-basicas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.1 Herramientas básicas
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#72-herramientas-para-fibra-optica" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.2 Herramientas para fibra óptica
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-equipos-de-comprobacion-y-certificacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. Equipos de comprobación y certificación
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="8. Equipos de comprobación y certificación">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tipos-de-comprobadores" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tipos de comprobadores
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-buenas-practicas-en-la-conectorizacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9. Buenas prácticas en la conectorización
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="9. Buenas prácticas en la conectorización">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#seguridad-y-medioambiente" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Seguridad y medioambiente
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-resumen-para-estudiar" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10. Resumen para estudiar
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="10. Resumen para estudiar">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#esquema-mental" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Esquema mental
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#puntos-habituales-de-examen" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Puntos habituales de examen
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03_tarjeta_red/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Capítulo 03 · Tarjeta de red
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../04_ethernet/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Capítulo 04 · Ethernet
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../05_cableado/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Capítulo 05 · Cableado estructurado
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../06_residuos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Capítulo 06 · Gestión de residuos
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../recursos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Recursos y esquemas
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-ideas-clave-del-capitulo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Ideas clave del capítulo
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-que-es-un-conector-de-red" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Qué es un conector de red
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-conectores-para-cables-de-par-trenzado" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Conectores para cables de par trenzado
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Conectores para cables de par trenzado">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-conector-rj45" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.1 Conector RJ45
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-otros-conectores-de-pares" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.2 Otros conectores de pares
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-conectores-para-cable-coaxial" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Conectores para cable coaxial
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Conectores para cable coaxial">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#conectores-mas-comunes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Conectores más comunes
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-conectores-para-fibra-optica" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Conectores para fibra óptica
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. Conectores para fibra óptica">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#51-conectores-mas-usados" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.1 Conectores más usados
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5.1 Conectores más usados">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#conector-sc-straight-connection" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Conector SC (Straight Connection)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#conector-st-straight-tip" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Conector ST (Straight Tip)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#52-otros-conectores-de-fibra" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.2 Otros conectores de fibra
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-elementos-fisicos-complementarios" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Elementos físicos complementarios
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-herramientas-de-conectorizacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Herramientas de conectorización
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7. Herramientas de conectorización">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#71-herramientas-basicas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.1 Herramientas básicas
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#72-herramientas-para-fibra-optica" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.2 Herramientas para fibra óptica
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-equipos-de-comprobacion-y-certificacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. Equipos de comprobación y certificación
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="8. Equipos de comprobación y certificación">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tipos-de-comprobadores" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tipos de comprobadores
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-buenas-practicas-en-la-conectorizacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9. Buenas prácticas en la conectorización
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="9. Buenas prácticas en la conectorización">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#seguridad-y-medioambiente" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Seguridad y medioambiente
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-resumen-para-estudiar" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10. Resumen para estudiar
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="10. Resumen para estudiar">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#esquema-mental" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Esquema mental
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#puntos-habituales-de-examen" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Puntos habituales de examen
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="02-conectores-y-herramientas">02 · Conectores y herramientas<a class="headerlink" href="#02-conectores-y-herramientas" title="Permanent link">&para;</a></h1>
+<h2 id="1-ideas-clave-del-capitulo">1. Ideas clave del capítulo<a class="headerlink" href="#1-ideas-clave-del-capitulo" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Los <strong>conectores</strong> permiten que la señal eléctrica u óptica entre y salga del cable.</li>
+<li>Un mal conector o una mala conexión es una de las <strong>principales causas de fallos en redes</strong>.</li>
+<li>Cada tipo de cable requiere <strong>conectores y herramientas específicas</strong>.</li>
+<li>La calidad del cableado depende tanto del cable como de la <strong>correcta conectorización</strong>.</li>
+</ul>
+<hr />
+<h2 id="2-que-es-un-conector-de-red">2. Qué es un conector de red<a class="headerlink" href="#2-que-es-un-conector-de-red" title="Permanent link">&para;</a></h2>
+<p>Un <strong>conector</strong> (o interfaz física) es el elemento que une:</p>
+<ul>
+<li>El <strong>cable</strong> con</li>
+<li>Un <strong>dispositivo de red</strong> (tarjeta de red, switch, router, patch panel, etc.)</li>
+</ul>
+<p>En una red local, los conectores deben garantizar:</p>
+<ul>
+<li>Continuidad eléctrica u óptica</li>
+<li>Correcta impedancia</li>
+<li>Sujeción mecánica fiable</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Idea importante</p>
+<p>La mayoría de los problemas en redes LAN <strong>no están en el software</strong>, sino en cables y conectores.</p>
+</div>
+<hr />
+<h2 id="3-conectores-para-cables-de-par-trenzado">3. Conectores para cables de par trenzado<a class="headerlink" href="#3-conectores-para-cables-de-par-trenzado" title="Permanent link">&para;</a></h2>
+<h3 id="31-conector-rj45">3.1 Conector RJ45<a class="headerlink" href="#31-conector-rj45" title="Permanent link">&para;</a></h3>
+<p>Es el <strong>conector más utilizado en redes Ethernet</strong>.</p>
+<p>Características principales:</p>
+<ul>
+<li>8 pines (4 pares)</li>
+<li>Usado con cable UTP y STP</li>
+<li>Compatible con categorías 5e, 6, etc.</li>
+</ul>
+<p>Usos habituales:</p>
+<ul>
+<li>Conexión de PCs</li>
+<li>Switches</li>
+<li>Patch panels</li>
+<li>Rosetas de red</li>
+</ul>
+<hr />
+<h3 id="32-otros-conectores-de-pares">3.2 Otros conectores de pares<a class="headerlink" href="#32-otros-conectores-de-pares" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>RJ11 / RJ12</strong></li>
+<li>Usados en telefonía</li>
+<li>Menor número de pines</li>
+<li><strong>AUI / DB15</strong></li>
+<li>Antiguos sistemas Ethernet</li>
+<li>Hoy prácticamente en desuso</li>
+</ul>
+<hr />
+<h2 id="4-conectores-para-cable-coaxial">4. Conectores para cable coaxial<a class="headerlink" href="#4-conectores-para-cable-coaxial" title="Permanent link">&para;</a></h2>
+<p>El cable coaxial se utilizó en las primeras redes Ethernet.</p>
+<h3 id="conectores-mas-comunes">Conectores más comunes<a class="headerlink" href="#conectores-mas-comunes" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>BNC</strong></li>
+<li>Mantiene la estructura coaxial</li>
+<li>Muy usado en 10Base2</li>
+<li><strong>T coaxial</strong></li>
+<li>Permite conectar una estación a un bus</li>
+<li><strong>Terminadores</strong></li>
+<li>Resistencias de 50 Ω</li>
+<li>Evitan reflexiones de señal</li>
+</ul>
+<div class="admonition warning">
+<p class="admonition-title">Examen</p>
+<p>En redes coaxiales, <strong>sin terminadores la red no funciona</strong>.</p>
+</div>
+<hr />
+<h2 id="5-conectores-para-fibra-optica">5. Conectores para fibra óptica<a class="headerlink" href="#5-conectores-para-fibra-optica" title="Permanent link">&para;</a></h2>
+<p>La fibra óptica requiere conectores de <strong>alta precisión</strong>, ya que trabajan con luz.</p>
+<h3 id="51-conectores-mas-usados">5.1 Conectores más usados<a class="headerlink" href="#51-conectores-mas-usados" title="Permanent link">&para;</a></h3>
+<h4 id="conector-sc-straight-connection">Conector SC (Straight Connection)<a class="headerlink" href="#conector-sc-straight-connection" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Inserción directa</li>
+<li>Uso frecuente en Gigabit Ethernet</li>
+<li>Muy común en instalaciones actuales</li>
+</ul>
+<h4 id="conector-st-straight-tip">Conector ST (Straight Tip)<a class="headerlink" href="#conector-st-straight-tip" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Requiere giro para bloquearse</li>
+<li>Similar a conectores coaxiales</li>
+<li>Usado en instalaciones híbridas</li>
+</ul>
+<hr />
+<h3 id="52-otros-conectores-de-fibra">5.2 Otros conectores de fibra<a class="headerlink" href="#52-otros-conectores-de-fibra" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>FC</strong></li>
+<li><strong>LC</strong></li>
+<li><strong>MT Array</strong></li>
+<li><strong>SC Duplex</strong></li>
+</ul>
+<p>Cada uno tiene aplicaciones específicas según:</p>
+<ul>
+<li>Densidad</li>
+<li>Facilidad de conexión</li>
+<li>Tipo de instalación</li>
+</ul>
+<hr />
+<h2 id="6-elementos-fisicos-complementarios">6. Elementos físicos complementarios<a class="headerlink" href="#6-elementos-fisicos-complementarios" title="Permanent link">&para;</a></h2>
+<p>Además de cables y conectores, en una instalación real encontramos:</p>
+<ul>
+<li><strong>Racks</strong></li>
+<li>Armarios normalizados (19")</li>
+<li>Organizan todos los dispositivos</li>
+<li><strong>Patch panels</strong></li>
+<li>Facilitan la gestión del cableado</li>
+<li>Evitan manipular el cable largo</li>
+<li><strong>Latiguillos</strong></li>
+<li>Cables cortos de interconexión</li>
+<li><strong>Canaletas</strong></li>
+<li>Protegen el cableado</li>
+<li>Mejoran organización y estética</li>
+<li><strong>Rosetas</strong></li>
+<li>Punto final del cableado en el puesto de trabajo</li>
+</ul>
+<hr />
+<h2 id="7-herramientas-de-conectorizacion">7. Herramientas de conectorización<a class="headerlink" href="#7-herramientas-de-conectorizacion" title="Permanent link">&para;</a></h2>
+<p>Una buena instalación requiere <strong>herramientas adecuadas</strong>.</p>
+<h3 id="71-herramientas-basicas">7.1 Herramientas básicas<a class="headerlink" href="#71-herramientas-basicas" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Crimpadora</strong></li>
+<li>Fija el conector RJ45 al cable</li>
+<li><strong>Pelacables</strong></li>
+<li>Retira la cubierta exterior</li>
+<li><strong>Cúter o cuchilla</strong></li>
+<li><strong>Destornilladores</strong></li>
+<li><strong>Pinzas</strong></li>
+</ul>
+<div class="admonition tip">
+<p class="admonition-title">Buenas prácticas</p>
+<p>Nunca improvises herramientas: <strong>un mal crimpado provoca fallos intermitentes</strong>.</p>
+</div>
+<hr />
+<h3 id="72-herramientas-para-fibra-optica">7.2 Herramientas para fibra óptica<a class="headerlink" href="#72-herramientas-para-fibra-optica" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Cortadora de fibra</li>
+<li>Pulidora</li>
+<li>Kits de alineación</li>
+<li>Herramientas de limpieza</li>
+</ul>
+<div class="admonition warning">
+<p class="admonition-title">Importante</p>
+<p>La fibra es <strong>muy frágil</strong> y no debe doblarse en exceso.</p>
+</div>
+<hr />
+<h2 id="8-equipos-de-comprobacion-y-certificacion">8. Equipos de comprobación y certificación<a class="headerlink" href="#8-equipos-de-comprobacion-y-certificacion" title="Permanent link">&para;</a></h2>
+<p>Antes de dar por buena una instalación hay que <strong>probarla</strong>.</p>
+<h3 id="tipos-de-comprobadores">Tipos de comprobadores<a class="headerlink" href="#tipos-de-comprobadores" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Comprobador de continuidad</strong></li>
+<li>Verifica que los hilos están bien conectados</li>
+<li><strong>Verificador de cables</strong></li>
+<li>Detecta cruces o pares incorrectos</li>
+<li><strong>Certificador</strong></li>
+<li>Mide:<ul>
+<li>Atenuación</li>
+<li>Diafonía (NEXT)</li>
+<li>Longitud</li>
+<li>Categoría real del cable</li>
+</ul>
+</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Profesional</p>
+<p>En instalaciones reales, <strong>la certificación del cableado suele ser obligatoria</strong>.</p>
+</div>
+<hr />
+<h2 id="9-buenas-practicas-en-la-conectorizacion">9. Buenas prácticas en la conectorización<a class="headerlink" href="#9-buenas-practicas-en-la-conectorizacion" title="Permanent link">&para;</a></h2>
+<ul>
+<li>No destrenzar más de lo necesario</li>
+<li>Respetar el <strong>código de colores</strong></li>
+<li>Etiquetar cables y conectores</li>
+<li>Probar cada cable después de montarlo</li>
+<li>Mantener herramientas ordenadas</li>
+</ul>
+<h3 id="seguridad-y-medioambiente">Seguridad y medioambiente<a class="headerlink" href="#seguridad-y-medioambiente" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Tener cuidado con herramientas cortantes</li>
+<li>Reciclar residuos electrónicos</li>
+<li>Mantener el puesto de trabajo limpio</li>
+</ul>
+<hr />
+<h2 id="10-resumen-para-estudiar">10. Resumen para estudiar<a class="headerlink" href="#10-resumen-para-estudiar" title="Permanent link">&para;</a></h2>
+<h3 id="esquema-mental">Esquema mental<a class="headerlink" href="#esquema-mental" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Conectores</li>
+<li>RJ45</li>
+<li>BNC</li>
+<li>Fibra (SC, ST)</li>
+<li>Elementos físicos</li>
+<li>Racks</li>
+<li>Patch panels</li>
+<li>Rosetas</li>
+<li>Herramientas</li>
+<li>Crimpadora</li>
+<li>Pelacables</li>
+<li>Certificadores</li>
+</ul>
+<h3 id="puntos-habituales-de-examen">Puntos habituales de examen<a class="headerlink" href="#puntos-habituales-de-examen" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Diferencia entre RJ45 y RJ11</li>
+<li>Función del patch panel</li>
+<li>Por qué se certifica el cableado</li>
+<li>Herramientas básicas de conectorización
+``</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Volver al principio
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.sections", "navigation.top", "navigation.expand", "content.code.copy", "search.highlight"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version": "Seleccionar versi\u00f3n"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>

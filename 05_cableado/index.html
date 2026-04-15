@@ -1,0 +1,1461 @@
+
+<!doctype html>
+<html lang="es" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Apuntes y documentación sobre instalación de redes LAN">
+      
+      
+        <meta name="author" content="Sergio Aracil Ruiz">
+      
+      
+      
+        <link rel="prev" href="../04_ethernet/">
+      
+      
+        <link rel="next" href="../06_residuos/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>Capítulo 05 · Cableado estructurado - Instalación física de redes</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#05-cableado-estructurado-e-instalacion-de-red" class="md-skip">
+          Saltar a contenido
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Cabecera">
+    <a href=".." title="Instalación física de redes" class="md-header__button md-logo" aria-label="Instalación física de redes" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Instalación física de redes
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Capítulo 05 · Cableado estructurado
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Búsqueda" placeholder="Búsqueda" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Buscar">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Limpiar" aria-label="Limpiar" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inicializando búsqueda
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navegación" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Instalación física de redes" class="md-nav__button md-logo" aria-label="Instalación física de redes" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Instalación física de redes
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Inicio
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../01_medios/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Capítulo 01 · Medios de transmisión
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../02_conectores/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Capítulo 02 · Conectores y herramientas
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03_tarjeta_red/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Capítulo 03 · Tarjeta de red
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../04_ethernet/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Capítulo 04 · Ethernet
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Capítulo 05 · Cableado estructurado
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Capítulo 05 · Cableado estructurado
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-ideas-clave-del-capitulo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Ideas clave del capítulo
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-que-es-el-cableado-estructurado" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Qué es el cableado estructurado
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-ventajas-del-cableado-estructurado" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Ventajas del cableado estructurado
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-el-proyecto-de-instalacion-de-red" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. El proyecto de instalación de red
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. El proyecto de instalación de red">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41-fases-del-proyecto" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.1 Fases del proyecto
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42-tareas-habituales-en-la-instalacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.2 Tareas habituales en la instalación
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-elementos-de-la-instalacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Elementos de la instalación
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. Elementos de la instalación">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#51-armarios-o-racks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.1 Armarios o racks
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#52-canaletas-y-conducciones" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.2 Canaletas y conducciones
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#53-rosetas-y-patch-panels" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.3 Rosetas y patch panels
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-estructura-del-cableado-estructurado" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Estructura del cableado estructurado
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6. Estructura del cableado estructurado">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#61-subsistemas-principales" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.1 Subsistemas principales
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#62-cableado-horizontal" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.2 Cableado horizontal
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#63-cableado-vertical-backbone" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.3 Cableado vertical (backbone)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-cuartos-de-comunicaciones-y-cpd" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Cuartos de comunicaciones y CPD
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7. Cuartos de comunicaciones y CPD">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#71-cuartos-de-comunicaciones" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.1 Cuartos de comunicaciones
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#72-centro-de-proceso-de-datos-cpd" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.2 Centro de Proceso de Datos (CPD)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-instalacion-electrica-y-climatizacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. Instalación eléctrica y climatización
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-etiquetado-y-documentacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9. Etiquetado y documentación
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="9. Etiquetado y documentación">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#buenas-practicas-de-etiquetado" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Buenas prácticas de etiquetado
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-certificacion-del-cableado" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10. Certificación del cableado
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="10. Certificación del cableado">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parametros-comunes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Parámetros comunes
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#11-buenas-practicas-profesionales" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11. Buenas prácticas profesionales
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#12-resumen-para-estudiar" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        12. Resumen para estudiar
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="12. Resumen para estudiar">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#esquema-mental" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Esquema mental
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#puntos-habituales-de-examen" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Puntos habituales de examen
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../06_residuos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Capítulo 06 · Gestión de residuos
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../recursos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Recursos y esquemas
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-ideas-clave-del-capitulo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Ideas clave del capítulo
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-que-es-el-cableado-estructurado" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Qué es el cableado estructurado
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-ventajas-del-cableado-estructurado" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Ventajas del cableado estructurado
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-el-proyecto-de-instalacion-de-red" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. El proyecto de instalación de red
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. El proyecto de instalación de red">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41-fases-del-proyecto" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.1 Fases del proyecto
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42-tareas-habituales-en-la-instalacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.2 Tareas habituales en la instalación
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-elementos-de-la-instalacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Elementos de la instalación
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. Elementos de la instalación">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#51-armarios-o-racks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.1 Armarios o racks
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#52-canaletas-y-conducciones" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.2 Canaletas y conducciones
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#53-rosetas-y-patch-panels" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.3 Rosetas y patch panels
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-estructura-del-cableado-estructurado" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Estructura del cableado estructurado
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6. Estructura del cableado estructurado">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#61-subsistemas-principales" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.1 Subsistemas principales
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#62-cableado-horizontal" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.2 Cableado horizontal
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#63-cableado-vertical-backbone" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.3 Cableado vertical (backbone)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-cuartos-de-comunicaciones-y-cpd" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Cuartos de comunicaciones y CPD
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7. Cuartos de comunicaciones y CPD">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#71-cuartos-de-comunicaciones" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.1 Cuartos de comunicaciones
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#72-centro-de-proceso-de-datos-cpd" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.2 Centro de Proceso de Datos (CPD)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-instalacion-electrica-y-climatizacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. Instalación eléctrica y climatización
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-etiquetado-y-documentacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9. Etiquetado y documentación
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="9. Etiquetado y documentación">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#buenas-practicas-de-etiquetado" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Buenas prácticas de etiquetado
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-certificacion-del-cableado" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10. Certificación del cableado
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="10. Certificación del cableado">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parametros-comunes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Parámetros comunes
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#11-buenas-practicas-profesionales" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11. Buenas prácticas profesionales
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#12-resumen-para-estudiar" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        12. Resumen para estudiar
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="12. Resumen para estudiar">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#esquema-mental" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Esquema mental
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#puntos-habituales-de-examen" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Puntos habituales de examen
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="05-cableado-estructurado-e-instalacion-de-red">05 · Cableado estructurado e instalación de red<a class="headerlink" href="#05-cableado-estructurado-e-instalacion-de-red" title="Permanent link">&para;</a></h1>
+<h2 id="1-ideas-clave-del-capitulo">1. Ideas clave del capítulo<a class="headerlink" href="#1-ideas-clave-del-capitulo" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Una instalación de red profesional requiere <strong>planificación y documentación</strong>.</li>
+<li>El <strong>cableado estructurado</strong> es un sistema normalizado y modular.</li>
+<li>Permite <strong>orden, flexibilidad y escalabilidad</strong> en la red.</li>
+<li>Sigue <strong>estándares internacionales</strong> (ANSI/TIA/EIA).</li>
+<li>Facilita el mantenimiento y las futuras ampliaciones.</li>
+</ul>
+<hr />
+<h2 id="2-que-es-el-cableado-estructurado">2. Qué es el cableado estructurado<a class="headerlink" href="#2-que-es-el-cableado-estructurado" title="Permanent link">&para;</a></h2>
+<p>El <strong>cableado estructurado</strong> es un sistema organizado de:</p>
+<ul>
+<li>Cables</li>
+<li>Conectores</li>
+<li>Canalizaciones</li>
+<li>Armarios</li>
+<li>Etiquetas y documentación</li>
+</ul>
+<p>Diseñado para crear una <strong>infraestructura genérica de comunicaciones</strong> en un edificio o campus.</p>
+<div class="admonition note">
+<p class="admonition-title">Idea importante</p>
+<p>Un buen cableado estructurado <strong>no depende de una tecnología concreta</strong> y permite cambios sin rehacer la instalación.</p>
+</div>
+<hr />
+<h2 id="3-ventajas-del-cableado-estructurado">3. Ventajas del cableado estructurado<a class="headerlink" href="#3-ventajas-del-cableado-estructurado" title="Permanent link">&para;</a></h2>
+<p>Un sistema de cableado estructurado bien diseñado ofrece:</p>
+<ul>
+<li><strong>Seguridad</strong> → menos errores y fallos</li>
+<li><strong>Flexibilidad</strong> → cambios rápidos de configuración</li>
+<li><strong>Escalabilidad</strong> → crecimiento sin rehacer la red</li>
+<li><strong>Orden y limpieza</strong></li>
+<li><strong>Facilidad de mantenimiento</strong></li>
+</ul>
+<hr />
+<h2 id="4-el-proyecto-de-instalacion-de-red">4. El proyecto de instalación de red<a class="headerlink" href="#4-el-proyecto-de-instalacion-de-red" title="Permanent link">&para;</a></h2>
+<p>Antes de instalar una red es necesario elaborar un <strong>proyecto de instalación</strong>.</p>
+<h3 id="41-fases-del-proyecto">4.1 Fases del proyecto<a class="headerlink" href="#41-fases-del-proyecto" title="Permanent link">&para;</a></h3>
+<ol>
+<li>Estudio de necesidades</li>
+<li>Diseño de la red</li>
+<li>Selección de materiales</li>
+<li>Presupuesto</li>
+<li>Ejecución</li>
+<li>Pruebas y certificación</li>
+<li>Documentación final</li>
+</ol>
+<hr />
+<h3 id="42-tareas-habituales-en-la-instalacion">4.2 Tareas habituales en la instalación<a class="headerlink" href="#42-tareas-habituales-en-la-instalacion" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Instalación de tomas de corriente</li>
+<li>Colocación de rosetas y jacks</li>
+<li>Tendido del cableado</li>
+<li>Conectorización en rosetas y patch panels</li>
+<li>Pruebas del cableado</li>
+<li>Etiquetado</li>
+<li>Instalación de dispositivos de red</li>
+<li>Configuración del software</li>
+</ul>
+<div class="admonition tip">
+<p class="admonition-title">Examen</p>
+<p>El <strong>orden correcto de las tareas</strong> es una pregunta muy habitual.</p>
+</div>
+<hr />
+<h2 id="5-elementos-de-la-instalacion">5. Elementos de la instalación<a class="headerlink" href="#5-elementos-de-la-instalacion" title="Permanent link">&para;</a></h2>
+<h3 id="51-armarios-o-racks">5.1 Armarios o racks<a class="headerlink" href="#51-armarios-o-racks" title="Permanent link">&para;</a></h3>
+<p>Los <strong>racks</strong> son armarios normalizados donde se alojan:</p>
+<ul>
+<li>Switches</li>
+<li>Routers</li>
+<li>Patch panels</li>
+<li>Servidores</li>
+<li>Sistemas SAI</li>
+</ul>
+<p>Características principales:</p>
+<ul>
+<li>Anchura estándar: <strong>19 pulgadas</strong></li>
+<li>Altura medida en <strong>U (Rack Units)</strong></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Dato técnico</p>
+<p>1 U = 1,75 pulgadas ≈ 44,45 mm</p>
+</div>
+<hr />
+<h3 id="52-canaletas-y-conducciones">5.2 Canaletas y conducciones<a class="headerlink" href="#52-canaletas-y-conducciones" title="Permanent link">&para;</a></h3>
+<p>Las <strong>canaletas</strong> protegen y organizan los cables:</p>
+<ul>
+<li>En paredes</li>
+<li>Falsos suelos</li>
+<li>Falsos techos</li>
+</ul>
+<p>Buenas prácticas:</p>
+<ul>
+<li>Separar <strong>datos</strong> y <strong>fuerza eléctrica</strong></li>
+<li>Evitar motores y líneas de alta tensión</li>
+<li>Sujetar los cables con bridas</li>
+</ul>
+<hr />
+<h3 id="53-rosetas-y-patch-panels">5.3 Rosetas y patch panels<a class="headerlink" href="#53-rosetas-y-patch-panels" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Rosetas</strong></li>
+<li>Punto final del cableado en el puesto</li>
+<li><strong>Patch panels</strong></li>
+<li>Permiten gestionar las conexiones sin manipular cables largos</li>
+</ul>
+<div class="admonition tip">
+<p class="admonition-title">Apunte</p>
+<p>Cambiar un latiguillo es más seguro que tocar el cableado fijo.</p>
+</div>
+<hr />
+<h2 id="6-estructura-del-cableado-estructurado">6. Estructura del cableado estructurado<a class="headerlink" href="#6-estructura-del-cableado-estructurado" title="Permanent link">&para;</a></h2>
+<p>El sistema se organiza en <strong>subsistemas jerarquizados</strong>.</p>
+<h3 id="61-subsistemas-principales">6.1 Subsistemas principales<a class="headerlink" href="#61-subsistemas-principales" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Puesto de trabajo</strong></li>
+<li><strong>Cableado horizontal</strong></li>
+<li><strong>Cuarto de comunicaciones (distribuidor)</strong></li>
+<li><strong>Cableado vertical o backbone</strong></li>
+<li><strong>Subsistema de campus</strong></li>
+</ul>
+<hr />
+<h3 id="62-cableado-horizontal">6.2 Cableado horizontal<a class="headerlink" href="#62-cableado-horizontal" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Conecta las rosetas con el armario de planta</li>
+<li>Normalmente UTP Cat 5e o Cat 6</li>
+<li>Longitud máxima:</li>
+<li>90 m de cable fijo</li>
+<li>10 m de latiguillos</li>
+</ul>
+<hr />
+<h3 id="63-cableado-vertical-backbone">6.3 Cableado vertical (backbone)<a class="headerlink" href="#63-cableado-vertical-backbone" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Comunica armarios de distintas plantas</li>
+<li>Requiere:</li>
+<li>Alta velocidad</li>
+<li>Alta fiabilidad</li>
+<li>Normalmente fibra óptica</li>
+</ul>
+<hr />
+<h2 id="7-cuartos-de-comunicaciones-y-cpd">7. Cuartos de comunicaciones y CPD<a class="headerlink" href="#7-cuartos-de-comunicaciones-y-cpd" title="Permanent link">&para;</a></h2>
+<h3 id="71-cuartos-de-comunicaciones">7.1 Cuartos de comunicaciones<a class="headerlink" href="#71-cuartos-de-comunicaciones" title="Permanent link">&para;</a></h3>
+<p>Son espacios técnicos donde se concentran:</p>
+<ul>
+<li>Cableado</li>
+<li>Armarios</li>
+<li>Electrónica de red</li>
+</ul>
+<p>Se recomienda al menos <strong>uno por planta</strong>.</p>
+<hr />
+<h3 id="72-centro-de-proceso-de-datos-cpd">7.2 Centro de Proceso de Datos (CPD)<a class="headerlink" href="#72-centro-de-proceso-de-datos-cpd" title="Permanent link">&para;</a></h3>
+<p>El <strong>CPD</strong> alberga los sistemas críticos:</p>
+<ul>
+<li>Servidores</li>
+<li>Almacenamiento</li>
+<li>Seguridad</li>
+<li>Comunicaciones externas</li>
+</ul>
+<p>Requisitos del CPD:</p>
+<ul>
+<li>Acceso restringido</li>
+<li>Aire acondicionado</li>
+<li>Control de temperatura y humedad</li>
+<li>Alimentación eléctrica segura</li>
+<li>Sistemas SAI</li>
+</ul>
+<div class="admonition warning">
+<p class="admonition-title">Importante</p>
+<p>Un fallo eléctrico sin SAI puede provocar <strong>pérdida de datos</strong>.</p>
+</div>
+<hr />
+<h2 id="8-instalacion-electrica-y-climatizacion">8. Instalación eléctrica y climatización<a class="headerlink" href="#8-instalacion-electrica-y-climatizacion" title="Permanent link">&para;</a></h2>
+<p>En redes profesionales es imprescindible:</p>
+<ul>
+<li>Tomas con <strong>tierra</strong></li>
+<li>Cuadros eléctricos independientes</li>
+<li>Protección frente a picos de tensión</li>
+<li>Aire acondicionado redundante</li>
+</ul>
+<p>Un entorno inadecuado puede dañar los equipos incluso aunque la red esté bien diseñada.</p>
+<hr />
+<h2 id="9-etiquetado-y-documentacion">9. Etiquetado y documentación<a class="headerlink" href="#9-etiquetado-y-documentacion" title="Permanent link">&para;</a></h2>
+<p>Todo elemento debe identificarse de forma <strong>clara y única</strong>.</p>
+<h3 id="buenas-practicas-de-etiquetado">Buenas prácticas de etiquetado<a class="headerlink" href="#buenas-practicas-de-etiquetado" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Etiquetar ambos extremos del cable</li>
+<li>Usar códigos neutros (salas, rosetas)</li>
+<li>Documentar cambios</li>
+</ul>
+<p>Normativa habitual:
+- <strong>EIA/TIA‑606</strong> (administración del cableado)</p>
+<hr />
+<h2 id="10-certificacion-del-cableado">10. Certificación del cableado<a class="headerlink" href="#10-certificacion-del-cableado" title="Permanent link">&para;</a></h2>
+<p>La <strong>certificación</strong> verifica que la instalación:</p>
+<ul>
+<li>Cumple los estándares</li>
+<li>Soporta las velocidades previstas</li>
+</ul>
+<h3 id="parametros-comunes">Parámetros comunes<a class="headerlink" href="#parametros-comunes" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Continuidad</li>
+<li>Longitud</li>
+<li>Atenuación</li>
+<li>Diafonía (NEXT)</li>
+</ul>
+<p>Normas habituales:
+- ANSI/TIA/EIA‑568
+- ISO/IEC 11801</p>
+<div class="admonition note">
+<p class="admonition-title">Profesional</p>
+<p>Muchas instalaciones <strong>no se consideran finalizadas sin certificación</strong>.</p>
+</div>
+<hr />
+<h2 id="11-buenas-practicas-profesionales">11. Buenas prácticas profesionales<a class="headerlink" href="#11-buenas-practicas-profesionales" title="Permanent link">&para;</a></h2>
+<ul>
+<li>No improvisar</li>
+<li>Seguir los estándares</li>
+<li>Mantener orden y limpieza</li>
+<li>Respetar la seguridad laboral</li>
+<li>Separar residuos y reciclar</li>
+</ul>
+<hr />
+<h2 id="12-resumen-para-estudiar">12. Resumen para estudiar<a class="headerlink" href="#12-resumen-para-estudiar" title="Permanent link">&para;</a></h2>
+<h3 id="esquema-mental">Esquema mental<a class="headerlink" href="#esquema-mental" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Proyecto de instalación</li>
+<li>Cableado estructurado</li>
+<li>Horizontal</li>
+<li>Vertical (backbone)</li>
+<li>Racks</li>
+<li>Patch panels</li>
+<li>CPD</li>
+<li>Certificación</li>
+</ul>
+<h3 id="puntos-habituales-de-examen">Puntos habituales de examen<a class="headerlink" href="#puntos-habituales-de-examen" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Qué es cableado estructurado</li>
+<li>Qué es un rack y una U</li>
+<li>Longitudes máximas del cable horizontal</li>
+<li>Función del backbone</li>
+<li>Por qué se certifica una instalación</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Volver al principio
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.sections", "navigation.top", "navigation.expand", "content.code.copy", "search.highlight"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version": "Seleccionar versi\u00f3n"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>

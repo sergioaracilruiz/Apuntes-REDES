@@ -1,0 +1,1346 @@
+
+<!doctype html>
+<html lang="es" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Apuntes y documentación sobre instalación de redes LAN">
+      
+      
+        <meta name="author" content="Sergio Aracil Ruiz">
+      
+      
+      
+        <link rel="prev" href="../02_conectores/">
+      
+      
+        <link rel="next" href="../04_ethernet/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>Capítulo 03 · Tarjeta de red - Instalación física de redes</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#03-la-tarjeta-de-red" class="md-skip">
+          Saltar a contenido
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Cabecera">
+    <a href=".." title="Instalación física de redes" class="md-header__button md-logo" aria-label="Instalación física de redes" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Instalación física de redes
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Capítulo 03 · Tarjeta de red
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Búsqueda" placeholder="Búsqueda" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Buscar">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Limpiar" aria-label="Limpiar" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inicializando búsqueda
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navegación" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Instalación física de redes" class="md-nav__button md-logo" aria-label="Instalación física de redes" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Instalación física de redes
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Inicio
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../01_medios/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Capítulo 01 · Medios de transmisión
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../02_conectores/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Capítulo 02 · Conectores y herramientas
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Capítulo 03 · Tarjeta de red
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Capítulo 03 · Tarjeta de red
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-ideas-clave-del-capitulo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Ideas clave del capítulo
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-que-es-una-tarjeta-de-red" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Qué es una tarjeta de red
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-tipos-de-tarjetas-de-red" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Tipos de tarjetas de red
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Tipos de tarjetas de red">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-segun-el-medio-de-transmision" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.1 Según el medio de transmisión
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-segun-el-tipo-de-equipo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.2 Según el tipo de equipo
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-conexion-de-la-tarjeta-al-sistema" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Conexión de la tarjeta al sistema
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Conexión de la tarjeta al sistema">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41-buses-mas-utilizados" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.1 Buses más utilizados
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-instalacion-de-la-tarjeta-de-red" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Instalación de la tarjeta de red
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. Instalación de la tarjeta de red">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#51-aspectos-de-seguridad" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.1 Aspectos de seguridad
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#52-plug-play" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.2 Plug &amp; Play
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-controladores-de-red-drivers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Controladores de red (drivers)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6. Controladores de red (drivers)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#61-tipos-de-controladores" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.1 Tipos de controladores
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-funciones-internas-de-la-tarjeta-de-red" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Funciones internas de la tarjeta de red
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-parametros-configurables-de-una-tarjeta-de-red" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. Parámetros configurables de una tarjeta de red
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-configuracion-en-sistemas-operativos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9. Configuración en sistemas operativos
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="9. Configuración en sistemas operativos">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#91-en-windows" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.1 En Windows
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#92-en-linux" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.2 En Linux
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-tarjetas-de-red-avanzadas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10. Tarjetas de red avanzadas
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#11-buenas-practicas-profesionales" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11. Buenas prácticas profesionales
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#12-resumen-para-estudiar" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        12. Resumen para estudiar
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="12. Resumen para estudiar">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#esquema-mental" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Esquema mental
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#puntos-habituales-de-examen" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Puntos habituales de examen
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../04_ethernet/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Capítulo 04 · Ethernet
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../05_cableado/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Capítulo 05 · Cableado estructurado
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../06_residuos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Capítulo 06 · Gestión de residuos
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../recursos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Recursos y esquemas
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-ideas-clave-del-capitulo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Ideas clave del capítulo
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-que-es-una-tarjeta-de-red" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Qué es una tarjeta de red
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-tipos-de-tarjetas-de-red" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Tipos de tarjetas de red
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Tipos de tarjetas de red">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-segun-el-medio-de-transmision" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.1 Según el medio de transmisión
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-segun-el-tipo-de-equipo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.2 Según el tipo de equipo
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-conexion-de-la-tarjeta-al-sistema" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Conexión de la tarjeta al sistema
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Conexión de la tarjeta al sistema">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41-buses-mas-utilizados" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.1 Buses más utilizados
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-instalacion-de-la-tarjeta-de-red" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Instalación de la tarjeta de red
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. Instalación de la tarjeta de red">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#51-aspectos-de-seguridad" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.1 Aspectos de seguridad
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#52-plug-play" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.2 Plug &amp; Play
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-controladores-de-red-drivers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Controladores de red (drivers)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6. Controladores de red (drivers)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#61-tipos-de-controladores" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.1 Tipos de controladores
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-funciones-internas-de-la-tarjeta-de-red" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Funciones internas de la tarjeta de red
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-parametros-configurables-de-una-tarjeta-de-red" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. Parámetros configurables de una tarjeta de red
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-configuracion-en-sistemas-operativos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9. Configuración en sistemas operativos
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="9. Configuración en sistemas operativos">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#91-en-windows" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.1 En Windows
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#92-en-linux" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.2 En Linux
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-tarjetas-de-red-avanzadas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10. Tarjetas de red avanzadas
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#11-buenas-practicas-profesionales" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11. Buenas prácticas profesionales
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#12-resumen-para-estudiar" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        12. Resumen para estudiar
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="12. Resumen para estudiar">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#esquema-mental" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Esquema mental
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#puntos-habituales-de-examen" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Puntos habituales de examen
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="03-la-tarjeta-de-red">03 · La tarjeta de red<a class="headerlink" href="#03-la-tarjeta-de-red" title="Permanent link">&para;</a></h1>
+<h2 id="1-ideas-clave-del-capitulo">1. Ideas clave del capítulo<a class="headerlink" href="#1-ideas-clave-del-capitulo" title="Permanent link">&para;</a></h2>
+<ul>
+<li>La <strong>tarjeta de red</strong> es el elemento que conecta el equipo a la red.</li>
+<li>Actúa como interfaz entre el <strong>hardware</strong> y la <strong>red de comunicaciones</strong>.</li>
+<li>Cada tarjeta está diseñada para una <strong>tecnología de red concreta</strong>.</li>
+<li>Requiere un <strong>controlador (driver)</strong> para funcionar correctamente.</li>
+<li>Su configuración influye directamente en el rendimiento de la red.</li>
+</ul>
+<hr />
+<h2 id="2-que-es-una-tarjeta-de-red">2. Qué es una tarjeta de red<a class="headerlink" href="#2-que-es-una-tarjeta-de-red" title="Permanent link">&para;</a></h2>
+<p>La <strong>tarjeta de red</strong>, también llamada <strong>adaptador de red</strong> o <strong>NIC</strong><br />
+(<em>Network Interface Card</em>), es el componente que permite que un dispositivo:</p>
+<ul>
+<li>Envíe datos a la red</li>
+<li>Reciba datos desde la red</li>
+</ul>
+<p>Cumple dos funciones básicas:</p>
+<ol>
+<li>Convertir los datos del sistema en señales aptas para el medio físico  </li>
+<li>Detectar y procesar las señales que provienen de la red</li>
+</ol>
+<div class="admonition note">
+<p class="admonition-title">Idea importante</p>
+<p>Sin tarjeta de red <strong>no existe comunicación en red</strong>, aunque el equipo tenga sistema operativo.</p>
+</div>
+<hr />
+<h2 id="3-tipos-de-tarjetas-de-red">3. Tipos de tarjetas de red<a class="headerlink" href="#3-tipos-de-tarjetas-de-red" title="Permanent link">&para;</a></h2>
+<h3 id="31-segun-el-medio-de-transmision">3.1 Según el medio de transmisión<a class="headerlink" href="#31-segun-el-medio-de-transmision" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Tarjetas cableadas</strong></li>
+<li>Ethernet (UTP, STP, fibra)</li>
+<li><strong>Tarjetas inalámbricas</strong></li>
+<li>Wi‑Fi</li>
+<li>Utilizan antenas en lugar de conectores</li>
+</ul>
+<hr />
+<h3 id="32-segun-el-tipo-de-equipo">3.2 Según el tipo de equipo<a class="headerlink" href="#32-segun-el-tipo-de-equipo" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Equipos de sobremesa</strong></li>
+<li>PCI / PCI‑Express</li>
+<li><strong>Portátiles</strong></li>
+<li>Integradas</li>
+<li>PCMCIA (antiguo)</li>
+<li>USB</li>
+<li><strong>Servidores</strong></li>
+<li>Tarjetas de alto rendimiento</li>
+<li>Doble o múltiple puerto</li>
+</ul>
+<hr />
+<h2 id="4-conexion-de-la-tarjeta-al-sistema">4. Conexión de la tarjeta al sistema<a class="headerlink" href="#4-conexion-de-la-tarjeta-al-sistema" title="Permanent link">&para;</a></h2>
+<p>La tarjeta de red se conecta al hardware mediante un <strong>bus interno</strong>.</p>
+<h3 id="41-buses-mas-utilizados">4.1 Buses más utilizados<a class="headerlink" href="#41-buses-mas-utilizados" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Bus</th>
+<th>Uso habitual</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>PCI‑Express</td>
+<td>Sobremesa / Servidores</td>
+</tr>
+<tr>
+<td>USB</td>
+<td>Portátiles y sobremesa</td>
+</tr>
+<tr>
+<td>PCMCIA</td>
+<td>Portátiles antiguos</td>
+</tr>
+</tbody>
+</table>
+<p>Cuanto mayor sea:</p>
+<ul>
+<li>La velocidad del bus</li>
+<li>El número de bits transmitidos en paralelo  </li>
+</ul>
+<div class="admonition tip">
+<p class="admonition-title">Información</p>
+<p>mayor será el rendimiento potencial de la tarjeta.</p>
+</div>
+<hr />
+<h2 id="5-instalacion-de-la-tarjeta-de-red">5. Instalación de la tarjeta de red<a class="headerlink" href="#5-instalacion-de-la-tarjeta-de-red" title="Permanent link">&para;</a></h2>
+<h3 id="51-aspectos-de-seguridad">5.1 Aspectos de seguridad<a class="headerlink" href="#51-aspectos-de-seguridad" title="Permanent link">&para;</a></h3>
+<p>Antes de instalar una tarjeta:</p>
+<ul>
+<li>Descargar electricidad estática</li>
+<li>Trabajar en entorno seco y limpio</li>
+<li>Apagar el equipo</li>
+<li>Manipular con cuidado los componentes</li>
+</ul>
+<div class="admonition warning">
+<p class="admonition-title">Seguridad</p>
+<p>La electricidad estática puede <strong>dañar irreversible­mente</strong> una tarjeta.</p>
+</div>
+<hr />
+<h3 id="52-plug-play">5.2 Plug &amp; Play<a class="headerlink" href="#52-plug-play" title="Permanent link">&para;</a></h3>
+<p>La mayoría de los sistemas modernos utilizan tecnología<br />
+<strong>Plug &amp; Play</strong> (“enchufar y listo”):</p>
+<ul>
+<li>El sistema detecta la tarjeta automáticamente</li>
+<li>Intenta instalar el controlador adecuado</li>
+<li>Puede requerir confirmación del usuario</li>
+</ul>
+<hr />
+<h2 id="6-controladores-de-red-drivers">6. Controladores de red (drivers)<a class="headerlink" href="#6-controladores-de-red-drivers" title="Permanent link">&para;</a></h2>
+<p>El <strong>controlador</strong> es el software que permite al sistema operativo:</p>
+<ul>
+<li>Comunicarse con la tarjeta</li>
+<li>Controlar la transmisión y recepción de datos</li>
+</ul>
+<p>Sin driver:</p>
+<ul>
+<li>La tarjeta <strong>no funciona</strong></li>
+<li>El sistema no puede usar la red</li>
+</ul>
+<hr />
+<h3 id="61-tipos-de-controladores">6.1 Tipos de controladores<a class="headerlink" href="#61-tipos-de-controladores" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Proporcionados por el <strong>fabricante</strong></li>
+<li>Incluidos en el <strong>sistema operativo</strong></li>
+<li>Firmados digitalmente (en sistemas modernos)</li>
+</ul>
+<div class="admonition tip">
+<p class="admonition-title">Buenas prácticas</p>
+<p>Es recomendable mantener los drivers <strong>actualizados</strong> para mejorar estabilidad y rendimiento.</p>
+</div>
+<hr />
+<h2 id="7-funciones-internas-de-la-tarjeta-de-red">7. Funciones internas de la tarjeta de red<a class="headerlink" href="#7-funciones-internas-de-la-tarjeta-de-red" title="Permanent link">&para;</a></h2>
+<p>La tarjeta de red se encarga de:</p>
+<ul>
+<li>Crear tramas de datos</li>
+<li>Detectar errores</li>
+<li>Controlar el acceso al medio</li>
+<li>Filtrar tramas según la dirección MAC</li>
+</ul>
+<p>Además, incorpora:</p>
+<ul>
+<li>Una <strong>dirección física única</strong> (dirección MAC)</li>
+<li>Memoria interna</li>
+<li>Electrónica de control</li>
+</ul>
+<hr />
+<h2 id="8-parametros-configurables-de-una-tarjeta-de-red">8. Parámetros configurables de una tarjeta de red<a class="headerlink" href="#8-parametros-configurables-de-una-tarjeta-de-red" title="Permanent link">&para;</a></h2>
+<p>Algunas tarjetas permiten configurar:</p>
+<ul>
+<li>Velocidad (10 / 100 / 1000 Mbps)</li>
+<li>Modo dúplex (half / full)</li>
+<li>Tipo de conexión (Ethernet, Wi‑Fi)</li>
+<li>Ahorro de energía</li>
+</ul>
+<p>Estas opciones pueden ajustarse:</p>
+<ul>
+<li>Mediante interfaz gráfica</li>
+<li>Mediante comandos</li>
+</ul>
+<hr />
+<h2 id="9-configuracion-en-sistemas-operativos">9. Configuración en sistemas operativos<a class="headerlink" href="#9-configuracion-en-sistemas-operativos" title="Permanent link">&para;</a></h2>
+<h3 id="91-en-windows">9.1 En Windows<a class="headerlink" href="#91-en-windows" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Panel de control</li>
+<li>Configuración de red</li>
+<li>Propiedades del adaptador</li>
+</ul>
+<p>Permite:</p>
+<ul>
+<li>Activar/desactivar la tarjeta</li>
+<li>Configurar IP</li>
+<li>Ver estado de conexión</li>
+</ul>
+<hr />
+<h3 id="92-en-linux">9.2 En Linux<a class="headerlink" href="#92-en-linux" title="Permanent link">&para;</a></h3>
+<p>Configuración mediante comandos:</p>
+<ul>
+<li><code>ifconfig</code> → tarjetas cableadas</li>
+<li><code>iwconfig</code> → tarjetas inalámbricas</li>
+</ul>
+<p>También existe configuración gráfica dependiendo de la distribución.</p>
+<div class="admonition tip">
+<p class="admonition-title">Examen</p>
+<p><code>ifconfig</code> → cable<br />
+<code>iwconfig</code> → Wi‑Fi</p>
+</div>
+<hr />
+<h2 id="10-tarjetas-de-red-avanzadas">10. Tarjetas de red avanzadas<a class="headerlink" href="#10-tarjetas-de-red-avanzadas" title="Permanent link">&para;</a></h2>
+<p>Algunas tarjetas incorporan funciones adicionales:</p>
+<ul>
+<li><strong>Arranque por red (PXE)</strong></li>
+<li>Permite cargar el sistema operativo desde la red</li>
+<li><strong>Offloading</strong></li>
+<li>Descarga tareas del procesador central</li>
+<li><strong>Múltiples interfaces</strong></li>
+<li>Balanceo o redundancia</li>
+</ul>
+<p>Estas características son comunes en <strong>servidores</strong>.</p>
+<hr />
+<h2 id="11-buenas-practicas-profesionales">11. Buenas prácticas profesionales<a class="headerlink" href="#11-buenas-practicas-profesionales" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Instalar tarjetas compatibles con la red</li>
+<li>Usar drivers oficiales</li>
+<li>Documentar el hardware instalado</li>
+<li>Probar la conexión tras la instalación</li>
+<li>Evitar configuraciones innecesarias</li>
+</ul>
+<hr />
+<h2 id="12-resumen-para-estudiar">12. Resumen para estudiar<a class="headerlink" href="#12-resumen-para-estudiar" title="Permanent link">&para;</a></h2>
+<h3 id="esquema-mental">Esquema mental<a class="headerlink" href="#esquema-mental" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Tarjeta de red</li>
+<li>Cableada / Inalámbrica</li>
+<li>Interfaz (PCIe, USB)</li>
+<li>Driver</li>
+<li>Configuración</li>
+<li>Dirección MAC</li>
+</ul>
+<h3 id="puntos-habituales-de-examen">Puntos habituales de examen<a class="headerlink" href="#puntos-habituales-de-examen" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Función de una tarjeta de red</li>
+<li>Diferencia entre hardware y driver</li>
+<li>Qué es Plug &amp; Play</li>
+<li>Comandos <code>ifconfig</code> / <code>iwconfig</code></li>
+<li>Dirección MAC</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Volver al principio
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.sections", "navigation.top", "navigation.expand", "content.code.copy", "search.highlight"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version": "Seleccionar versi\u00f3n"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>
