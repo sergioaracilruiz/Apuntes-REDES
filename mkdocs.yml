@@ -1,0 +1,28 @@
+site_name: Instalación física de redes
+site_description: Documentación y apuntes sobre redes locales
+site_author: Sergio Aracil Ruiz
+
+theme:
+  name: material
+  language: es
+  features:
+    - navigation.sections
+    - navigation.top
+    - content.code.copy
+    - search.highlight
+
+nav:
+  - Inicio: index.md
+  - Medios de transmisión: 01_medios.md
+  - Conectores y herramientas: 02_conectores.md
+  - Tarjeta de red: 03_tarjeta_red.md
+  - Ethernet: 04_ethernet.md
+  - Cableado estructurado: 05_cableado.md
+  - Gestión de residuos: 06_residuos.md
+  - Recursos y esquemas: recursos.md
+
+markdown_extensions:
+  - admonition
+  - tables
+  - toc:
+      permalink: true
