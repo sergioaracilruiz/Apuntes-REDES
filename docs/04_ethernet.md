@@ -162,3 +162,76 @@ La tarjeta de red:
 | 100BaseTX | UTP Cat 5 | 100 Mbps | 100 m |
 | 1000BaseTX | UTP Cat 5e | 1 Gbps | 100 m |
 | 1000BaseLX | Fibra | 1 Gbps | Hasta 10 km |
+| 10GBaseT | UTP Cat 6 | 10 Gbps | 100 m |
+
+---
+
+## 8. Ethernet y dispositivos de red
+
+### Interacción con dispositivos
+
+- **Hubs**
+  - Reenvían todo
+  - Generan colisiones
+- **Switches**
+  - Conmutan tramas según MAC
+  - No hay colisiones
+- **Routers**
+  - Conectan redes distintas
+  - No reenvían tramas indiscriminadamente
+
+---
+
+## 9. Power over Ethernet (PoE)
+
+**PoE (Power over Ethernet)** permite suministrar energía eléctrica a través del cable Ethernet.
+
+### Ventajas
+
+- No necesita fuente de alimentación extra
+- Facilita la instalación
+- Muy usado en:
+  - Cámaras IP
+  - Puntos de acceso Wi‑Fi
+  - Teléfonos IP
+
+### Tipos de dispositivos
+
+- **PSE** (*Power Sourcing Equipment*)
+  - Suministra energía (switch PoE)
+- **PD** (*Powered Device*)
+  - Recibe energía (cámara, AP)
+
+!!! note "Importante"
+    PoE requiere como mínimo **cable categoría 5**.
+
+---
+
+## 10. Buenas prácticas en redes Ethernet
+
+- Usar cableado certificado
+- Aprovechar switches en lugar de hubs
+- Documentar dominios de red
+- Elegir el tipo de Ethernet según necesidad
+- Evitar segmentos excesivamente largos
+
+---
+
+## 11. Resumen para estudiar
+
+### Esquema mental
+
+- Ethernet
+  - IEEE 802.3
+  - CSMA/CD
+  - Tramas
+  - Tipos (10 / 100 / 1000 / 10G)
+  - PoE
+
+### Puntos habituales de examen
+
+- Qué es CSMA/CD
+- Qué es un dominio de colisión
+- Diferencias hub / switch
+- Tipos de Ethernet más comunes
+- Qué es PoE
