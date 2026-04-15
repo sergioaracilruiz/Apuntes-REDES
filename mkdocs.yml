@@ -1,5 +1,5 @@
 site_name: Instalación física de redes
-site_description: Documentación y apuntes sobre redes locales
+site_description: Apuntes y documentación sobre instalación de redes LAN
 site_author: Sergio Aracil Ruiz
 
 theme:
@@ -8,17 +8,18 @@ theme:
   features:
     - navigation.sections
     - navigation.top
+    - navigation.expand
     - content.code.copy
     - search.highlight
 
 nav:
   - Inicio: index.md
-  - Medios de transmisión: 01_medios.md
-  - Conectores y herramientas: 02_conectores.md
-  - Tarjeta de red: 03_tarjeta_red.md
-  - Ethernet: 04_ethernet.md
-  - Cableado estructurado: 05_cableado.md
-  - Gestión de residuos: 06_residuos.md
+  - Capítulo 01 · Medios de transmisión: 01_medios.md
+  - Capítulo 02 · Conectores y herramientas: 02_conectores.md
+  - Capítulo 03 · Tarjeta de red: 03_tarjeta_red.md
+  - Capítulo 04 · Ethernet: 04_ethernet.md
+  - Capítulo 05 · Cableado estructurado: 05_cableado.md
+  - Capítulo 06 · Gestión de residuos: 06_residuos.md
   - Recursos y esquemas: recursos.md
 
 markdown_extensions:
@@ -26,3 +27,7 @@ markdown_extensions:
   - tables
   - toc:
       permalink: true
+
+plugins:
+  - search
+``
